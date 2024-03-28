@@ -1,4 +1,4 @@
 void main() {
   String name = 'welcome to rudra it hub';
-  print(name.toUpperCase());
+  print(name.split(' ').length);
 }

@@ -1,17 +1,14 @@
 void main() {
-  int a = 12;
-  int b = 40;
+  int num1 = 12;
+  int num2 = 40;
 
-  switch (a < b && b > a) {
-    case 0:
+  switch (num1 < num2) {
+    case 'num1<num2':
       print("40");
 
       break;
-    case 1:
+    case 'num1>num2':
       print("70");
-      break;
-    case 2:
-      print("45");
       break;
 
     default:

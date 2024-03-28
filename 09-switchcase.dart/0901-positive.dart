@@ -1,14 +1,14 @@
 void main() {
   int a = 23;
-  switch (a < 20) {
-    case 1:
+  switch (a) {
+    case < 0:
       print("23 is negative");
 
       break;
-    case 2:
+    case > 0:
       print("23 is positive");
       break;
-    case 3:
+    case == 0:
       print("23 is zero");
       break;
 
