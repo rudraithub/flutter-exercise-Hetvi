@@ -7,7 +7,7 @@ class name {
 }
 
 class dateofbirth {
-  int a = 01 - 01 - 1011;
+  int a = 1 - 1 - 1011;
 }
 
 class mobile {
