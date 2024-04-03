@@ -3,11 +3,11 @@ void main() {
   int num2 = 40;
 
   switch (num1 < num2) {
-    case 'num1<num2':
+    case true:
       print("40");
 
       break;
-    case 'num1>num2':
+    case false:
       print("70");
       break;
 
