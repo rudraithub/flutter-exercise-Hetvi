@@ -1,20 +1,4 @@
 
-Conversation opened. 1 read message.
-
-Skip to content
-Using Gmail with screen readers
-8 of 1,418
-(no subject)
-Inbox
-
-Sanjna <sanjnasolanki134@gmail.com>
-Attachments
-Mar 19, 2024, 11:16 AM
-to me
-
-
- 19 Attachments
-  •  Scanned by Gmail
  ## 0901- Write a below program using class and object. Make a class for store your rollno, name ,dob ,mob and city detail. And access this using object in both way (in same file and using another file).
 
 Expected Output:
