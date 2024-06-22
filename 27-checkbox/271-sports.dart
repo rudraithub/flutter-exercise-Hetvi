@@ -24,75 +24,76 @@ class MyWidget1 extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget1> {
-  int selectedValue = 0;
+  bool chessChecked = false;
+  bool cricketChecked = false;
+  bool carromChecked = false;
+  bool hockeyChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Radio Button', selectionColor: Colors.indigo),
+        title: Text('Checkbox Demo', style: TextStyle(color: Colors.pink)),
+        backgroundColor: Colors.white,
       ),
       body: Center(
         child: Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  Radio(
-                    value: 1,
-                    groupValue: selectedValue,
-                    onChanged: (value) {
+                  Checkbox(
+                    value: chessChecked,
+                    onChanged: (bool? value) {
                       setState(() {
-                        selectedValue = value as int;
+                        chessChecked = value!;
                       });
                     },
                   ),
-                  Text('bhavnagar'),
+                  Text('Chess'),
                 ],
               ),
               Row(
                 children: [
-                  Radio(
-                    value: 2,
-                    groupValue: selectedValue,
-                    onChanged: (value) {
+                  Checkbox(
+                    value: cricketChecked,
+                    onChanged: (bool? value) {
                       setState(() {
-                        selectedValue = value as int;
+                        cricketChecked = value!;
                       });
                     },
                   ),
-                  Text('rajkot'),
+                  Text('Cricket'),
                 ],
               ),
-                Row(
+              Row(
                 children: [
-                  Radio(
-                    value: 2,
-                    groupValue: selectedValue,
-                    onChanged: (value) {
+                  Checkbox(
+                    value: carromChecked,
+                    onChanged: (bool? value) {
                       setState(() {
-                        selectedValue = value as int;
+                        carromChecked = value!;
                       });
                     },
                   ),
-                  Text('surat'),
+                  Text('Carrom'),
                 ],
               ),
-                    Row(
+              Row(
                 children: [
-                  Radio(
-                    value: 2,
-                    groupValue: selectedValue,
-                    onChanged: (value) {
+                  Checkbox(
+                    value: hockeyChecked,
+                    onChanged: (bool? value) {
                       setState(() {
-                        selectedValue = value as int;
+                        hockeyChecked = value!;
                       });
                     },
                   ),
-                  Text('ahemdabad'),
+                  Text('Hockey'),
                 ],
               ),
+              Text("$chessChecked, $cricketChecked, $carromChecked, $hockeyChecked")
             ],
           ),
         ),
