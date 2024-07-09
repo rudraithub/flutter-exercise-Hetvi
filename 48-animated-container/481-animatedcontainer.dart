@@ -26,11 +26,9 @@ class Demo extends StatefulWidget {
 }
 
 class _DemoState extends State<Demo> {
-  double initialSize = 100; 
-  double currentSize = 100; 
-  Color color = Colors.brown; 
+  double size = 100;
+  Color color = Colors.brown;
   Timer? timer;
-  bool isExpanded = false; 
 
   @override
   void initState() {
@@ -41,6 +39,10 @@ class _DemoState extends State<Demo> {
   }
 
   @override
+  void dispose() {
+    timer?.cancel(); 
+    super.dispose();
+  }
 
   void _changeColor() {
     var random = Random();
@@ -54,17 +56,6 @@ class _DemoState extends State<Demo> {
     });
   }
 
-  void _toggleSize() {
-    setState(() {
-      if (isExpanded) {
-        currentSize = initialSize;
-      } else {
-        currentSize = initialSize * 2;
-      }
-      isExpanded = !isExpanded; 
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,27 +65,30 @@ class _DemoState extends State<Demo> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          GestureDetector(
-            onTap: _toggleSize, 
-            child: Center(
-              child: AnimatedContainer(
-                duration: const Duration(seconds: 1),
-                height: currentSize,
-                width: currentSize,
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                curve: Curves.easeInOut,
+          Center(
+            child: AnimatedContainer(
+              duration: const Duration(seconds: 1),
+              height: size,
+              width: size,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(10),
               ),
+              curve: Curves.easeInOut,
             ),
           ),
           const SizedBox(height: 20),
           const Text(
-            "Tap to expand/collapse",
+            "Expanded",
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _changeColor(); 
+        },
+        child: const Icon(Icons.refresh),
       ),
     );
   }
